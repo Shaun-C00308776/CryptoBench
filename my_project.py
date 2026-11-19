@@ -1,33 +1,22 @@
 
 import os
-import sys
 import csv
 import time
 import statistics
 import argparse
 
 from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.asymmetric import (
-    rsa,
-    ec,
-    x25519,
-    padding,
-    ed25519
-)
+from cryptography.hazmat.primitives.asymmetric import rsa, padding
 
-from cryptography.hazmat.primitives.ciphers.aead import (
-    AESGCM,
-    AESGCMSIV,
-    ChaCha20Poly1305
-)
-
-from cryptography.hazmat.primitives.kdf.hkdf import HKDF
 
 # Store all measurements
 results = []
 
+
 # Measure how long an operation takes
 def measure(part, algorithm, operation, message_bytes, function, runs=101):
+
+    times = []
 
     for run in range(runs):
 
@@ -39,6 +28,8 @@ def measure(part, algorithm, operation, message_bytes, function, runs=101):
 
         elapsed = end - start
 
+        times.append(elapsed)
+
         results.append([
             part,
             algorithm,
@@ -49,6 +40,8 @@ def measure(part, algorithm, operation, message_bytes, function, runs=101):
         ])
 
     print("Completed:", algorithm, operation)
+
+    return times
 
 
 # Calculate median and IQR
@@ -87,7 +80,96 @@ def save_results(output_folder):
 
         writer.writerows(results)
 
-    print("Results saved to:", filename)
+    print("\nResults saved to:", filename)
+
+
+# Benchmark RSA-OAEP
+def benchmark_rsa_oaep(key_size):
+
+    algorithm = "RSA-OAEP-" + str(key_size)
+
+    print("\nTesting", algorithm)
+
+    # Generate RSA keys (21 measurements)
+    keygen_times = measure(
+        "kem",
+        algorithm,
+        "keygen",
+        0,
+        lambda: rsa.generate_private_key(
+            public_exponent=65537,
+            key_size=key_size
+        ),
+        runs=21
+    )
+
+    # Generate one key pair for other operations
+    private_key = rsa.generate_private_key(
+        public_exponent=65537,
+        key_size=key_size
+    )
+
+    public_key = private_key.public_key()
+
+    # Configure OAEP padding
+    oaep = padding.OAEP(
+        mgf=padding.MGF1(algorithm=hashes.SHA256()),
+        algorithm=hashes.SHA256(),
+        label=None
+    )
+
+    # Encapsulation
+    def encapsulate():
+
+        secret = os.urandom(32)
+
+        public_key.encrypt(secret, oaep)
+
+    encapsulate_times = measure(
+        "kem",
+        algorithm,
+        "encapsulate",
+        0,
+        encapsulate
+    )
+
+    # Create ciphertext before measuring decapsulation
+    secret = os.urandom(32)
+
+    ciphertext = public_key.encrypt(secret, oaep)
+
+    # Decapsulation
+    def decapsulate():
+
+        recovered_secret = private_key.decrypt(
+            ciphertext,
+            oaep
+        )
+
+    decapsulate_times = measure(
+        "kem",
+        algorithm,
+        "decapsulate",
+        0,
+        decapsulate
+    )
+
+    # Display statistics
+    print("\nStatistics for", algorithm)
+
+    for operation, times in [
+        ("Key generation", keygen_times),
+        ("Encapsulation", encapsulate_times),
+        ("Decapsulation", decapsulate_times)
+    ]:
+
+        median, iqr = calculate_statistics(times)
+
+        print(operation)
+        print("Median:", median / 1_000_000, "ms")
+        print("IQR:", iqr / 1_000_000, "ms")
+
+    print("\n", algorithm, "completed!")
 
 
 # Main program
@@ -99,15 +181,25 @@ def main():
 
     args = parser.parse_args()
 
-    print("Starting CryptoBench...")
+    print("================================")
+    print("       CryptoBench Project")
+    print("================================")
 
-    # Benchmark sections will go here
+    # KEY ESTABLISHMENT
 
+    print("\nKEY ESTABLISHMENT")
+
+    benchmark_rsa_oaep(3072)
+
+    benchmark_rsa_oaep(7680)
+
+    # Save all measurements
     save_results(args.output_folder)
 
-    print("CryptoBench completed!")
+    print("\n================================")
+    print("       Project completed!")
+    print("================================")
 
 
 if __name__ == "__main__":
     main()
-
