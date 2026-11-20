@@ -1,0 +1,26 @@
+Introduction
+Cryptography plays an important role in modern computer security. It is used to protect sensitive information, verify identities, and ensure that data can be transferred securely across networks. The purpose of this project is to investigate and compare the performance of different cryptographic algorithms using Python. The project focuses on three main areas of cryptography: key establishment, digital signatures, and authenticated encryption. In this Project, I developed a benchmarking program using Python and the `cryptography` library. The program measures how long different cryptographic operations take to complete, allowing their performance to be compared. The algorithms are tested using repeated measurements, with the median and interquartile range (IQR) used to summarise their performance. The results are recorded in CSV files and used to create tables and graphs. The overall aim is to identify the performance differences between traditional cryptographic algorithms and newer post-quantum cryptographic algorithms.
+
+Testing Environment and Methodology
+The benchmarking program was developed using Visual Studio Code and Python. The `cryptography` library was used to implement the cryptographic algorithms.
+The following software and hardware were used during testing:
+Personal Laptop
+Operating System:  
+Processor:
+CPU Architecture:
+RAM:
+Python Version:
+Cryptography Version:
+OpenSSL Version:
+
+College PC
+Operating System:  
+Processor:
+CPU Architecture:
+RAM:
+Python Version:
+Cryptography Version:
+OpenSSL Version:
+
+Benchmarking Methodology
+Each cryptographic operation was measured using Python's `time.perf_counter_ns()` function. This function records the time taken by an operation in nanoseconds. Most operations were performed 101 times, while RSA key generation was performed 21 times. The first measurement was treated as a warm-up run and excluded from the statistical calculations. The median was used to represent the typical execution time, while the interquartile range (IQR) was used to show the variation between measurements. The results were saved in CSV format for further analysis and presentation in tables and graphs.
