@@ -3,24 +3,64 @@ Cryptography plays an important role in modern computer security. It is used to 
 
 Testing Environment and Methodology
 The benchmarking program was developed using Visual Studio Code and Python. The `cryptography` library was used to implement the cryptographic algorithms.
-The following software and hardware were used during testing:
+Below shows the specs belonging to the devices I ran the CryptoBench project in, but the device used may impact the speed of how the code takes to do its thing:
 Personal Laptop
-Operating System:  
-Processor:
-CPU Architecture:
-RAM:
-Python Version:
-Cryptography Version:
-OpenSSL Version:
+Operating System: Windows 11
+Processor: Snapdragon(R) X Elite - X1E78100 - Qualcomm(R) Oryon(TM) CPU (3.42 GHz)
+CPU Architecture: 
+RAM: 16.0 GB 
+Python Version: Python.Python.3.13
+Cryptography Version: 
+OpenSSL Version: 
 
+Benchmarking Methodology
+Each cryptographic operation was measured using Python's `time.perf_counter_ns()` function. This function records the time taken by an operation in nanoseconds. Most operations were performed 101 times, while RSA key generation was performed 21 times. The first measurement was treated as a warm-up run and excluded from the statistical calculations. The median was used to represent the typical execution time, while the interquartile range (IQR) was used to show the variation between measurements. The results were saved in CSV format for further analysis and presentation in tables and graphs. 
+
+Key Establishment Algorithms
+Key establishment allows two parties to create or exchange a shared secret that can later be used to encrypt information. The project benchmarks several key establishment algorithms, including traditional RSA and elliptic-curve algorithms, alongside the newer post-quantum ML-KEM algorithms.
+The algorithms tested in the project include:
+- RSA-OAEP-3072        - RSA-OAEP-7680
+- ECDH-P-256           - ECDH-P-384
+- ECDH-P-521           - X25519
+- ML-KEM-768           - ML-KEM-1024
+Three operations were measured for each algorithm within my code:
+Key generation: Measuring the time required to generate a key pair.
+Encapsulation: Measuring the time required to establish or produce a shared secret.
+Decapsulation: Measuring the time required to recover or calculate the shared secret.
+
+Results
+The results will be presented using a table showing the median execution time and IQR for each operation.
+[Insert the key establishment results table here.]
+
+[Insert the key establishment performance graph here.]
+
+Authenticated Encryption Algorithms
+Authenticated encryption provides confidentiality and integrity. It protects the contents of a message while also allowing the recipient to detect whether the encrypted data has been modified.
+The project benchmarks four authenticated encryption algorithms:
+- AES-128-GCM
+- AES-256-GCM
+- ChaCha20-Poly1305
+- AES-256-GCM-SIV
+Each algorithm was tested using four different message sizes:
+- 64 bytes			          - 1,024 bytes
+- 16,384 bytes			      - 1,048,576 bytes
+Two operations were measured by my code:
+Encryption: Measuring the time required to encrypt a message.
+Decryption: Measuring the time required to decrypt an encrypted message.
+Results
+[Insert your authenticated encryption results table here.]
+[Insert your authenticated encryption performance graphs here.]
+
+Second Testing Environment
+In order to o investigate whether hardware and software environments affect cryptographic performance, the benchmarking program was also executed on a second testing environment. The same Python script and cryptographic library were used to ensure that the results could be compared fairly. The second environment had the following specifications, provided by SETU Carlow's library:
 College PC
 Operating System:  
 Processor:
 CPU Architecture:
 RAM:
-Python Version:
+Python Version: Python.Python.3.13
 Cryptography Version:
 OpenSSL Version:
 
-Benchmarking Methodology
-Each cryptographic operation was measured using Python's `time.perf_counter_ns()` function. This function records the time taken by an operation in nanoseconds. Most operations were performed 101 times, while RSA key generation was performed 21 times. The first measurement was treated as a warm-up run and excluded from the statistical calculations. The median was used to represent the typical execution time, while the interquartile range (IQR) was used to show the variation between measurements. The results were saved in CSV format for further analysis and presentation in tables and graphs.
+The results from the second environment were recorded separately and compared against the first environment.
+[Insert second-environment results tables and graphs.]
