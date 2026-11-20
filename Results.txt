@@ -1,1 +1,321 @@
 ~~~Results for the school pc~~~
+CryptoBench environment
+-----------------------
+Operating system: Linux-6.8.0-1070-azure-x86_64-with-glibc2.39
+Machine: x86_64
+Processor: x86_64
+Python: 3.14.2
+cryptography: 50.0.2
+OpenSSL: OpenSSL 3.0.13 30 Jan 2024
+
+Starting CryptoBench benchmarks.
+This may take a while, especially RSA key generation.
+Please avoid using other programs during measurements.
+
+RSA-OAEP-3072
+  RSA-OAEP-3072          keygen       median=202.5059 ms, IQR=113.8941 ms
+  RSA-OAEP-3072          encapsulate  median=0.0499 ms, IQR=0.0019 ms
+  RSA-OAEP-3072          decapsulate  median=0.9434 ms, IQR=0.0494 ms
+
+RSA-OAEP-7680
+  RSA-OAEP-7680          keygen       median=5075.5656 ms, IQR=5769.2047 ms
+  RSA-OAEP-7680          encapsulate  median=0.2619 ms, IQR=0.0254 ms
+  RSA-OAEP-7680          decapsulate  median=41.4800 ms, IQR=0.6423 ms
+
+ECDH-P-256
+  ECDH-P-256             keygen       median=0.0150 ms, IQR=0.0002 ms
+  ECDH-P-256             encapsulate  median=0.0916 ms, IQR=0.0171 ms
+  ECDH-P-256             decapsulate  median=0.0611 ms, IQR=0.0005 ms
+
+ECDH-P-384
+  ECDH-P-384             keygen       median=0.1247 ms, IQR=0.0177 ms
+  ECDH-P-384             encapsulate  median=0.4525 ms, IQR=0.0368 ms
+  ECDH-P-384             decapsulate  median=0.2763 ms, IQR=0.0176 ms
+
+ECDH-P-521
+  ECDH-P-521             keygen       median=0.1353 ms, IQR=0.0506 ms
+  ECDH-P-521             encapsulate  median=0.4808 ms, IQR=0.0285 ms
+  ECDH-P-521             decapsulate  median=0.2928 ms, IQR=0.0211 ms
+
+X25519
+  X25519                 keygen       median=0.0337 ms, IQR=0.0004 ms
+  X25519                 encapsulate  median=0.0976 ms, IQR=0.0304 ms
+  X25519                 decapsulate  median=0.0356 ms, IQR=0.0005 ms
+
+ML-KEM-768
+  ML-KEM-768             keygen       median=0.0943 ms, IQR=0.0180 ms
+  ML-KEM-768             encapsulate  median=0.0225 ms, IQR=0.0002 ms
+  ML-KEM-768             decapsulate  median=0.0344 ms, IQR=0.0114 ms
+
+ML-KEM-1024
+  ML-KEM-1024            keygen       median=0.1531 ms, IQR=0.0652 ms
+  ML-KEM-1024            encapsulate  median=0.0298 ms, IQR=0.0002 ms
+  ML-KEM-1024            decapsulate  median=0.0449 ms, IQR=0.0150 ms
+
+RSA-PSS-3072
+  RSA-PSS-3072           keygen       median=128.7220 ms, IQR=224.8849 ms
+  RSA-PSS-3072           sign         median=0.9417 ms, IQR=0.0118 ms
+  RSA-PSS-3072           verify       median=0.0501 ms, IQR=0.0021 ms
+
+RSA-PSS-7680
+  RSA-PSS-7680           keygen       median=4162.6795 ms, IQR=7453.7525 ms
+  RSA-PSS-7680           sign         median=41.5311 ms, IQR=0.6379 ms
+  RSA-PSS-7680           verify       median=0.2603 ms, IQR=0.0222 ms
+
+ECDSA-P-256
+  ECDSA-P-256            keygen       median=0.0150 ms, IQR=0.0002 ms
+  ECDSA-P-256            sign         median=0.0283 ms, IQR=0.0004 ms
+  ECDSA-P-256            verify       median=0.0983 ms, IQR=0.0141 ms
+
+ECDSA-P-384
+  ECDSA-P-384            keygen       median=0.1238 ms, IQR=0.0069 ms
+  ECDSA-P-384            sign         median=0.1972 ms, IQR=0.1342 ms
+  ECDSA-P-384            verify       median=0.3889 ms, IQR=0.0293 ms
+
+ECDSA-P-521
+  ECDSA-P-521            keygen       median=0.1342 ms, IQR=0.0084 ms
+  ECDSA-P-521            sign         median=0.2528 ms, IQR=0.0294 ms
+  ECDSA-P-521            verify       median=0.4751 ms, IQR=0.0193 ms
+
+Ed25519
+  Ed25519                keygen       median=0.0339 ms, IQR=0.0003 ms
+  Ed25519                sign         median=0.0411 ms, IQR=0.0149 ms
+  Ed25519                verify       median=0.1115 ms, IQR=0.0170 ms
+
+ML-DSA-44
+  ML-DSA-44              keygen       median=0.1420 ms, IQR=0.0632 ms
+  ML-DSA-44              sign         median=0.6389 ms, IQR=0.8176 ms
+  ML-DSA-44              verify       median=0.1148 ms, IQR=0.0126 ms
+
+ML-DSA-65
+  ML-DSA-65              keygen       median=0.1870 ms, IQR=0.0286 ms
+  ML-DSA-65              sign         median=0.7811 ms, IQR=0.7057 ms
+  ML-DSA-65              verify       median=0.1752 ms, IQR=0.0069 ms
+
+ML-DSA-87
+  ML-DSA-87              keygen       median=0.2566 ms, IQR=0.0078 ms
+  ML-DSA-87              sign         median=0.9303 ms, IQR=1.1300 ms
+  ML-DSA-87              verify       median=0.2725 ms, IQR=0.0097 ms
+
+AES-128-GCM
+  Message size: 64 bytes
+  AES-128-GCM            encrypt      median=0.0007 ms, IQR=0.0001 ms
+  AES-128-GCM            decrypt      median=0.0007 ms, IQR=0.0001 ms
+  Message size: 1024 bytes
+  AES-128-GCM            encrypt      median=0.0008 ms, IQR=0.0001 ms
+  AES-128-GCM            decrypt      median=0.0008 ms, IQR=0.0006 ms
+  Message size: 16384 bytes
+  AES-128-GCM            encrypt      median=0.0022 ms, IQR=0.0001 ms
+  AES-128-GCM            decrypt      median=0.0022 ms, IQR=0.0001 ms
+  Message size: 1048576 bytes
+  AES-128-GCM            encrypt      median=0.0973 ms, IQR=0.0223 ms
+  AES-128-GCM            decrypt      median=0.1119 ms, IQR=0.0177 ms
+
+AES-256-GCM
+  Message size: 64 bytes
+  AES-256-GCM            encrypt      median=0.0014 ms, IQR=0.0002 ms
+  AES-256-GCM            decrypt      median=0.0013 ms, IQR=0.0002 ms
+  Message size: 1024 bytes
+  AES-256-GCM            encrypt      median=0.0017 ms, IQR=0.0002 ms
+  AES-256-GCM            decrypt      median=0.0016 ms, IQR=0.0001 ms
+  Message size: 16384 bytes
+  AES-256-GCM            encrypt      median=0.0037 ms, IQR=0.0007 ms
+  AES-256-GCM            decrypt      median=0.0034 ms, IQR=0.0004 ms
+  Message size: 1048576 bytes
+  AES-256-GCM            encrypt      median=0.1334 ms, IQR=0.0072 ms
+  AES-256-GCM            decrypt      median=0.1313 ms, IQR=0.0101 ms
+
+ChaCha20-Poly1305
+  Message size: 64 bytes
+  ChaCha20-Poly1305      encrypt      median=0.0028 ms, IQR=0.0005 ms
+  ChaCha20-Poly1305      decrypt      median=0.0026 ms, IQR=0.0003 ms
+  Message size: 1024 bytes
+  ChaCha20-Poly1305      encrypt      median=0.0027 ms, IQR=0.0003 ms
+  ChaCha20-Poly1305      decrypt      median=0.0027 ms, IQR=0.0003 ms
+  Message size: 16384 bytes
+  ChaCha20-Poly1305      encrypt      median=0.0091 ms, IQR=0.0010 ms
+  ChaCha20-Poly1305      decrypt      median=0.0083 ms, IQR=0.0003 ms
+  Message size: 1048576 bytes
+  ChaCha20-Poly1305      encrypt      median=0.3920 ms, IQR=0.0441 ms
+  ChaCha20-Poly1305      decrypt      median=0.3344 ms, IQR=0.0326 ms
+
+AES-256-GCM-SIV
+  Message size: 64 bytes
+  AES-256-GCM-SIV        encrypt      median=0.0023 ms, IQR=0.0003 ms
+  AES-256-GCM-SIV        decrypt      median=0.0025 ms, IQR=0.0004 ms
+  Message size: 1024 bytes
+  AES-256-GCM-SIV        encrypt      median=0.0055 ms, IQR=0.0005 ms
+  AES-256-GCM-SIV        decrypt      median=0.0051 ms, IQR=0.0018 ms
+  Message size: 16384 bytes
+  AES-256-GCM-SIV        encrypt      median=0.0319 ms, IQR=0.0008 ms
+  AES-256-GCM-SIV        decrypt      median=0.0350 ms, IQR=0.0126 ms
+  Message size: 1048576 bytes
+  AES-256-GCM-SIV        encrypt      median=2.0027 ms, IQR=0.0466 ms
+  AES-256-GCM-SIV        decrypt      median=2.0346 ms, IQR=0.0642 ms
+
+CSV saved to: /workspaces/CryptoBench/results/run-1/raw.csv
+Rows written (including warm-ups): 8063
+
+Benchmark run finished.
+Check the terminal for any algorithms marked SKIPPED.
+Do not edit raw.csv: it contains the actual measured results.
+
+
+
+~~~Results for Personal Laptop~~~
+CryptoBench environment
+-----------------------
+Operating system: Linux-6.8.0-1070-azure-x86_64-with-glibc2.39
+Machine: x86_64
+Processor: x86_64
+Python: 3.14.2
+cryptography: 50.0.2
+OpenSSL: OpenSSL 3.0.13 30 Jan 2024
+
+Starting CryptoBench benchmarks.
+This may take a while, especially RSA key generation.
+Please avoid using other programs during measurements.
+
+RSA-OAEP-3072
+  RSA-OAEP-3072          keygen       median=171.6519 ms, IQR=146.7737 ms
+  RSA-OAEP-3072          encapsulate  median=0.0453 ms, IQR=0.0014 ms
+  RSA-OAEP-3072          decapsulate  median=0.8453 ms, IQR=0.0391 ms
+
+RSA-OAEP-7680
+  RSA-OAEP-7680          keygen       median=8084.7616 ms, IQR=8644.3917 ms
+  RSA-OAEP-7680          encapsulate  median=0.2256 ms, IQR=0.0054 ms
+  RSA-OAEP-7680          decapsulate  median=38.4606 ms, IQR=1.1995 ms
+
+ECDH-P-256
+  ECDH-P-256             keygen       median=0.0146 ms, IQR=0.0001 ms
+  ECDH-P-256             encapsulate  median=0.0863 ms, IQR=0.0228 ms
+  ECDH-P-256             decapsulate  median=0.0535 ms, IQR=0.0024 ms
+
+ECDH-P-384
+  ECDH-P-384             keygen       median=0.1396 ms, IQR=0.0148 ms
+  ECDH-P-384             encapsulate  median=0.4963 ms, IQR=0.0556 ms
+  ECDH-P-384             decapsulate  median=0.3048 ms, IQR=0.0263 ms
+
+ECDH-P-521
+  ECDH-P-521             keygen       median=0.1465 ms, IQR=0.0156 ms
+  ECDH-P-521             encapsulate  median=0.5007 ms, IQR=0.0215 ms
+  ECDH-P-521             decapsulate  median=0.3068 ms, IQR=0.0182 ms
+
+X25519
+  X25519                 keygen       median=0.0585 ms, IQR=0.0265 ms
+  X25519                 encapsulate  median=0.0719 ms, IQR=0.0069 ms
+  X25519                 decapsulate  median=0.0348 ms, IQR=0.0003 ms
+
+ML-KEM-768
+  ML-KEM-768             keygen       median=0.0989 ms, IQR=0.0126 ms
+  ML-KEM-768             encapsulate  median=0.0341 ms, IQR=0.0165 ms
+  ML-KEM-768             decapsulate  median=0.0562 ms, IQR=0.0260 ms
+
+ML-KEM-1024
+  ML-KEM-1024            keygen       median=0.1471 ms, IQR=0.0911 ms
+  ML-KEM-1024            encapsulate  median=0.0311 ms, IQR=0.0002 ms
+  ML-KEM-1024            decapsulate  median=0.0667 ms, IQR=0.0337 ms
+
+RSA-PSS-3072
+  RSA-PSS-3072           keygen       median=145.7581 ms, IQR=89.9133 ms
+  RSA-PSS-3072           sign         median=0.8473 ms, IQR=0.0118 ms
+  RSA-PSS-3072           verify       median=0.0470 ms, IQR=0.0007 ms
+
+RSA-PSS-7680
+  RSA-PSS-7680           keygen       median=5662.3815 ms, IQR=6308.3455 ms
+  RSA-PSS-7680           sign         median=38.1671 ms, IQR=0.2137 ms
+  RSA-PSS-7680           verify       median=0.2266 ms, IQR=0.0077 ms
+
+ECDSA-P-256
+  ECDSA-P-256            keygen       median=0.0145 ms, IQR=0.0002 ms
+  ECDSA-P-256            sign         median=0.0277 ms, IQR=0.0004 ms
+  ECDSA-P-256            verify       median=0.0779 ms, IQR=0.0216 ms
+
+ECDSA-P-384
+  ECDSA-P-384            keygen       median=0.1424 ms, IQR=0.0523 ms
+  ECDSA-P-384            sign         median=0.2061 ms, IQR=0.1083 ms
+  ECDSA-P-384            verify       median=0.4310 ms, IQR=0.0239 ms
+
+ECDSA-P-521
+  ECDSA-P-521            keygen       median=0.1463 ms, IQR=0.0094 ms
+  ECDSA-P-521            sign         median=0.2769 ms, IQR=0.0264 ms
+  ECDSA-P-521            verify       median=0.5116 ms, IQR=0.0190 ms
+
+Ed25519
+  Ed25519                keygen       median=0.0337 ms, IQR=0.0002 ms
+  Ed25519                sign         median=0.0386 ms, IQR=0.0169 ms
+  Ed25519                verify       median=0.1147 ms, IQR=0.0461 ms
+
+ML-DSA-44
+  ML-DSA-44              keygen       median=0.1223 ms, IQR=0.0686 ms
+  ML-DSA-44              sign         median=0.6097 ms, IQR=0.5927 ms
+  ML-DSA-44              verify       median=0.1343 ms, IQR=0.0465 ms
+
+ML-DSA-65
+  ML-DSA-65              keygen       median=0.2016 ms, IQR=0.0169 ms
+  ML-DSA-65              sign         median=0.8620 ms, IQR=0.9761 ms
+  ML-DSA-65              verify       median=0.1979 ms, IQR=0.0064 ms
+
+ML-DSA-87
+  ML-DSA-87              keygen       median=0.2972 ms, IQR=0.1431 ms
+  ML-DSA-87              sign         median=1.0234 ms, IQR=0.8884 ms
+  ML-DSA-87              verify       median=0.3073 ms, IQR=0.0085 ms
+
+AES-128-GCM
+  Message size: 64 bytes
+  AES-128-GCM            encrypt      median=0.0016 ms, IQR=0.0001 ms
+  AES-128-GCM            decrypt      median=0.0013 ms, IQR=0.0002 ms
+  Message size: 1024 bytes
+  AES-128-GCM            encrypt      median=0.0016 ms, IQR=0.0001 ms
+  AES-128-GCM            decrypt      median=0.0018 ms, IQR=0.0001 ms
+  Message size: 16384 bytes
+  AES-128-GCM            encrypt      median=0.0023 ms, IQR=0.0000 ms
+  AES-128-GCM            decrypt      median=0.0029 ms, IQR=0.0009 ms
+  Message size: 1048576 bytes
+  AES-128-GCM            encrypt      median=0.1105 ms, IQR=0.0014 ms
+  AES-128-GCM            decrypt      median=0.1320 ms, IQR=0.0341 ms
+
+AES-256-GCM
+  Message size: 64 bytes
+  AES-256-GCM            encrypt      median=0.0016 ms, IQR=0.0001 ms
+  AES-256-GCM            decrypt      median=0.0013 ms, IQR=0.0001 ms
+  Message size: 1024 bytes
+  AES-256-GCM            encrypt      median=0.0018 ms, IQR=0.0001 ms
+  AES-256-GCM            decrypt      median=0.0016 ms, IQR=0.0001 ms
+  Message size: 16384 bytes
+  AES-256-GCM            encrypt      median=0.0039 ms, IQR=0.0003 ms
+  AES-256-GCM            decrypt      median=0.0039 ms, IQR=0.0002 ms
+  Message size: 1048576 bytes
+  AES-256-GCM            encrypt      median=0.1431 ms, IQR=0.0364 ms
+  AES-256-GCM            decrypt      median=0.1292 ms, IQR=0.0319 ms
+
+ChaCha20-Poly1305
+  Message size: 64 bytes
+  ChaCha20-Poly1305      encrypt      median=0.0018 ms, IQR=0.0001 ms
+  ChaCha20-Poly1305      decrypt      median=0.0010 ms, IQR=0.0006 ms
+  Message size: 1024 bytes
+  ChaCha20-Poly1305      encrypt      median=0.0013 ms, IQR=0.0000 ms
+  ChaCha20-Poly1305      decrypt      median=0.0013 ms, IQR=0.0000 ms
+  Message size: 16384 bytes
+  ChaCha20-Poly1305      encrypt      median=0.0065 ms, IQR=0.0003 ms
+  ChaCha20-Poly1305      decrypt      median=0.0053 ms, IQR=0.0001 ms
+  Message size: 1048576 bytes
+  ChaCha20-Poly1305      encrypt      median=0.3323 ms, IQR=0.0274 ms
+  ChaCha20-Poly1305      decrypt      median=0.3360 ms, IQR=0.0192 ms
+
+AES-256-GCM-SIV
+  Message size: 64 bytes
+  AES-256-GCM-SIV        encrypt      median=0.0030 ms, IQR=0.0003 ms
+  AES-256-GCM-SIV        decrypt      median=0.0026 ms, IQR=0.0002 ms
+  Message size: 1024 bytes
+  AES-256-GCM-SIV        encrypt      median=0.0065 ms, IQR=0.0007 ms
+  AES-256-GCM-SIV        decrypt      median=0.0055 ms, IQR=0.0009 ms
+  Message size: 16384 bytes
+  AES-256-GCM-SIV        encrypt      median=0.0607 ms, IQR=0.0069 ms
+  AES-256-GCM-SIV        decrypt      median=0.0605 ms, IQR=0.0062 ms
+  Message size: 1048576 bytes
+  AES-256-GCM-SIV        encrypt      median=2.4007 ms, IQR=0.2607 ms
+  AES-256-GCM-SIV        decrypt      median=2.3759 ms, IQR=0.0587 ms
+
+CSV saved to: /workspaces/CryptoBench/results/run-1/raw.csv
+Rows written (including warm-ups): 8063
